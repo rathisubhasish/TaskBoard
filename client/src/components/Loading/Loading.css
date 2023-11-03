@@ -1,0 +1,48 @@
+.screenLoading{
+    display: flex;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.08);
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.loading-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    background: transparent;
+} 
+
+.pageLoad{
+    flex-grow: 1;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+} 
+
+.blankLoading{
+    display: flex;
+    position: absolute;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.dataLoad{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}

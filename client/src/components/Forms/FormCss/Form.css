@@ -1,0 +1,146 @@
+.form-container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: lightblue;
+}
+
+.form-content{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    min-height: 80vh;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.form-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-family: var(--regularFont);
+}
+
+
+.login-theme{
+    color: white;
+    background-color: blueviolet;
+}
+
+.signup-theme{
+    background-color: brown;
+    color: white;
+}
+
+.form-fields-container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 1.4rem;
+}
+
+.form-fields{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 90%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.8rem;
+    margin-top: 1.2rem;
+    flex-grow: 1;
+}
+
+.form-input{
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    border-right: 4px solid #636364;
+    border-left: 4px solid #636364;
+    color: #636364;
+}
+
+.form-password-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+
+#signup-btn{
+    margin-top: 2rem;
+}
+
+#login-btn{
+    margin-top: 2rem;
+}
+
+
+.form-field-info-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 2px dashed #636364;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.form-field-info{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1rem;
+    color: #636364;
+
+}
+
+/* ______________________________________ */
+/* Media queries */
+
+
+/* ____________ for screens like tablets and ipad */
+@media screen and (min-width: 768px) and (min-height: 900px) {
+
+    .form-content{
+        width: 60%;
+    }
+    
+    .form-fields{
+        width: 70%;
+    }
+
+}
+
+
+/* _______________ for laptop screens */
+@media screen and (min-width: 1280px) and (min-height: 700px) {
+
+    .form-content{
+        width: 25%;
+    }
+    
+    .form-fields{
+        width: 60%;
+    }
+
+}

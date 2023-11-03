@@ -1,0 +1,21 @@
+.home-container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.home-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+}
+
+#project-desc{
+    color: blue;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
