@@ -1,0 +1,51 @@
+.opaque-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: rgb(0,0,0,0.2);
+    width: 100%;
+    height: 90%;
+}
+
+.action-card{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    background-color: white;
+    border-radius: 5px;
+    min-height: 20vh;
+    padding: 10px;
+}
+
+.action-card-header{
+    display: flex;
+    padding: 5px;
+    font-size: 1.5rem;
+    justify-content: center;
+    color: #636364;
+    font-weight: bold;
+}
+
+.action-form-input{
+    display: flex;
+    margin-top: 2rem;
+    padding: 10px;
+    width: 100%;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    color: #636364;
+    text-align: center;
+    outline: none;
+    border: none;
+}
+
+#card-action-btn{
+    color: white;
+    background-color: rgb(180, 125, 231);
+}
+
+.action-card-close-icon{
+    cursor: pointer;
+}

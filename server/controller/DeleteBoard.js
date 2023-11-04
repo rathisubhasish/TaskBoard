@@ -3,12 +3,12 @@ require("dotenv").config();
 const User = require("../model/user");
 const Board = require("../model/board");
 
-const AddBoard = async (req,res) => {
-    const {board_title, user_id} = req.body;
-    if(!board_title)
+const DeleteBoard = async (req,res) => {
+    const {board_id, user_id} = req.body;
+    if(!board_id)
     {
         return res.status(400).json({
-            error: "Board title is required",
+            error: "Board Id is required",
         });
     }
 
@@ -32,23 +32,25 @@ const AddBoard = async (req,res) => {
             });
         }
 
-        const boardTitleExists = await Board.findOne({
-            where: {board_title: board_title , user_id: user_id}    
+        const boardIdExists = await Board.findOne({
+            where: {board_id: board_id , user_id: user_id}    
         });
 
-        if(boardTitleExists)
+        if(!boardIdExists)
         {
             return res.status(400).json({
-                error: "Board title already used!",
+                error: "Board does not exists",
             });
         }
 
-        const newBoard = await Board.create({
-            board_title: board_title,
-            user_id: user_id
+        const deleteBoard = await Board.destroy({
+            where: {
+                board_id: board_id
+            }
         });
+
         res.status(201).json({
-            message: "Board added successfully"
+            message: "Board deleted successfully"
         });
 
     }catch(err){
@@ -59,4 +61,4 @@ const AddBoard = async (req,res) => {
     }
 };
 
-module.exports = AddBoard;
+module.exports = DeleteBoard;

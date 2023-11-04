@@ -1,21 +1,72 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect, useContext} from 'react';
 import "./Board.css";
-import "./HandleBoard";
-
-import { ListItem } from '../../components/components';
-
+import { toast } from "react-toastify";
+import { CardAction, ListItem } from '../../components/components';
+import getBoards from '../../apis/getBoards';
+import { UserContext } from '../../UserContext';
+import { addBoard } from '../../apis/apis';
 
 const Board = () => {
-  const [columns, setColumns] = useState([]);
-  let colAdded = [];
+  const [boards, setBoards] = useState([]);
+  const [boardTitle, setBoardTitle] = useState("");
+  const { userId } = useContext(UserContext);
 
-  const addColumns = () =>{
-    const colToAdd = {
-      id: `listid${columns.length+1}`,
-      title: `LIST ${columns.length + 1}`,
-      tasks: []
+  useEffect(()=>{
+    const updateBoards = getBoards({userId})
+      .then((res) => {
+        if (res.error){
+          console.error(res.error);
+        }
+        else{
+          setBoards(res.data);
+        }
+      })
+      .catch((err) => {
+        console.error(err)
+        }
+      );
+    return () => updateBoards;
+  },[])
+
+  const addColumns = async (e) =>{
+    e.preventDefault();
+    try {
+    const res = await addBoard({boardTitle,userId});
+    if (res.error){
+      setBoardTitle(""); 
+        toast.error(res.error, {
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeButton: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
     }
-    setColumns([...columns, colToAdd]);
+    else {
+        setBoardTitle("");  
+        toast.success(res.message, {
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeButton: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+
+    }
+    } catch (err) {
+    // loadingVisibility(false);
+    setBoardTitle("");  
+    toast.error("Server error, please try later!", {
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeButton: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
+    }
   }
 
   return (
@@ -23,30 +74,46 @@ const Board = () => {
       <div className='board-container'>
         <div className='board-layout'>
           <div className='board-area'>
-
-            <ul className='list-area'>
+            <div className='list-area'>
+              
               {
-                columns.length > 0 
-                ? 
-                columns.map((data, index)=>{
-                  return(<>
-                  <li className='list-item' key={index}>
-                    sdf
-                  {/* <ListItem cols={item} idx={idx}/> */}
-                  </li>
-                  </>)
-                })
+                !boards.length > 0
+                ?
+                'No Item, Please create new List'
                 :
-                <h3>No Item, Please create new list</h3>
+                boards.map((data)=>{
+                  return(
+                    <>
+                      <ListItem title={data.board_title} boardId={data.board_id}/>
+                    </>
+                  )
+                })
               }
-            </ul>
+
+            </div>
             <div className='list-control'>
               <div className='list-control-content'>
                 <div className='list-control-header'>
                   <h3>Create New List</h3>
                 </div>
                 <div className='list-add-control'>
-                  <button className='addbtn btn' onClick={addColumns}>+ Add</button>
+                  <input 
+                    type="text" className='list-add-field'
+                    placeholder='add board name'  
+                    value={boardTitle}
+                    onChange={(e)=>setBoardTitle(e.target.value)}
+                    required
+                  />
+
+                  {
+                    boardTitle.length > 0
+                    ?
+                    <>
+                    <button className='addbtn btn' onClick={addColumns}>+ Add</button>
+                    </>
+                    :
+                    ''
+                  }
                 </div>
 
               </div>

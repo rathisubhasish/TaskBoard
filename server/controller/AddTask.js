@@ -2,16 +2,23 @@
 require("dotenv").config();
 const User = require("../model/user");
 const Board = require("../model/board");
+const Task = require("../model/task");
 
-const AddBoard = async (req,res) => {
-    const {board_title, user_id} = req.body;
-    if(!board_title)
+const AddTask = async (req,res) => {
+    const {task, board_id, user_id} = req.body;
+    if(!task)
     {
         return res.status(400).json({
-            error: "Board title is required",
+            error: "Task is required",
         });
     }
 
+    if(!board_id)
+    {
+        return res.status(400).json({
+            error: "board id is required",
+        });
+    }
     if(!user_id)
     {
         return res.status(400).json({
@@ -32,23 +39,23 @@ const AddBoard = async (req,res) => {
             });
         }
 
-        const boardTitleExists = await Board.findOne({
-            where: {board_title: board_title , user_id: user_id}    
+        const taskExists = await Task.findOne({
+            where: {task: task , board_id: board_id}    
         });
 
-        if(boardTitleExists)
+        if(taskExists)
         {
             return res.status(400).json({
-                error: "Board title already used!",
+                error: "Task already acknowledged!",
             });
         }
 
-        const newBoard = await Board.create({
-            board_title: board_title,
-            user_id: user_id
+        const newTask = await Task.create({
+            task: task,
+            board_id: board_id
         });
         res.status(201).json({
-            message: "Board added successfully"
+            message: "Task added successfully"
         });
 
     }catch(err){
@@ -59,4 +66,4 @@ const AddBoard = async (req,res) => {
     }
 };
 
-module.exports = AddBoard;
+module.exports = AddTask;

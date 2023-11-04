@@ -87,6 +87,7 @@
     flex-direction: column;
     justify-content: flex-start;
     min-width: 75%;
+    position: relative;
 }
 
 
@@ -113,6 +114,46 @@
     color: #FB3640;
 }
 
+.list-item-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    bottom: 0;
+}
+
+.list-actions-area{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 7px;
+}
+
+hr{
+    width: 100%;
+}
+
+.list-delete-icon{
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+    border: 3px solid #FB3640;
+    color: #FB3640;
+    padding: 8px;
+    cursor: pointer;
+}
+.task-add-icon{
+    display: flex;
+    border-radius: 50%;
+    flex-direction: column;
+    border: 3px solid #364afb;
+    color: #364afb;
+    padding: 7px;
+    cursor: pointer;
+}
+
 .list-task-review{
     display: flex;
     flex-direction: column;
@@ -137,6 +178,7 @@
     outline: none;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     border-right: 4px solid #36c3fb;
+    cursor:grab;
 }
 
 .task-check{
@@ -174,6 +216,16 @@
     margin-top: 10px;
     padding: 2px;
     width: 100%;
+}
+
+.list-add-field{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1rem;
+    outline: none;
 }
 
 .addbtn{

@@ -24,6 +24,7 @@ function App() {
         }
         else{
           setUser(res.data.email);
+          setUserId(res.data.user_id);
           console.log(user);
           setUserLoading(false);
         }

@@ -1,22 +1,22 @@
 const { sq } = require("../config/db");
 const { literal, DataTypes } = require("sequelize");
-const User = require("../model/user");
+const Board = require("./board");
 
-const Board = sq.define("board", {
-    board_id:{
+const Task = sq.define("task", {
+    task_id:{
       type: DataTypes.UUID,
       defaultValue: literal('gen_random_uuid()'),
       primaryKey: true,
     },
-    board_title: {
+    task: {
         type: DataTypes.STRING,
         allowNull: false,
     }
   });
-  
-  Board.belongsTo(User, {foreignKey: 'user_id'});
-  Board.sync().then(() => {
-    console.log("Board Model synced");
+
+  Task.belongsTo(Board, {foreignKey: 'board_id'});
+  Task.sync().then(() => {
+    console.log("Task Model synced");
   });
-  
-  module.exports = Board;
+
+  module.exports = Task;
