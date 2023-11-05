@@ -1,6 +1,5 @@
 
 require("dotenv").config();
-const User = require("../model/user");
 const Board = require("../model/board");
 const Task = require("../model/task");
 

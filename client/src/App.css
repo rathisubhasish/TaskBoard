@@ -53,5 +53,23 @@
     color: #636364;
 }
 
+.animateit {
+    animation-duration: 0.4s;
+    animation-name: animate-pop;
+    animation-timing-function: ease-in;
+}
+
+@keyframes animate-pop {
+    0% {
+      opacity: 0;
+      transform: scale(0.9, 0.9);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+  }
+
 
   

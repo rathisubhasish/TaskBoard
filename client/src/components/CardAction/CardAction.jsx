@@ -4,7 +4,7 @@ import addTask from '../../apis/addTask';
 import { toast } from "react-toastify";
 
 
-const CardAction = ({ boardId, userId, setShowActionCard, showActionCard }) => {
+const CardAction = ({ boardId, userId, setShowActionCard, showActionCard, allTasks, setAllTasks }) => {
   const [task, setTask] = useState("");
    const handleTask = async (e) =>{
       e.preventDefault();
@@ -12,7 +12,7 @@ const CardAction = ({ boardId, userId, setShowActionCard, showActionCard }) => {
         const res = await addTask({boardId,task, userId});
         if (res.error){
             toast.error(res.error, {
-            autoClose: 4000,
+            autoClose: 2000,
             hideProgressBar: true,
             closeButton: false,
             pauseOnHover: true,
@@ -24,8 +24,9 @@ const CardAction = ({ boardId, userId, setShowActionCard, showActionCard }) => {
 
           setTask("");
           setShowActionCard(!showActionCard);
+          setAllTasks([...allTasks,res.data]);
             toast.success(res.message, {
-            autoClose: 4000,
+            autoClose: 2000,
             hideProgressBar: true,
             closeButton: false,
             pauseOnHover: true,
@@ -34,7 +35,6 @@ const CardAction = ({ boardId, userId, setShowActionCard, showActionCard }) => {
             });
         }
         } catch (err) {
-        // loadingVisibility(false);
         toast.error("Server error, please try later!", {
             autoClose: 2000,
             hideProgressBar: true,

@@ -50,7 +50,7 @@ const DeleteBoard = async (req,res) => {
         });
 
         res.status(201).json({
-            message: "Board deleted successfully"
+            message: "Board deleted successfully", 
         });
 
     }catch(err){

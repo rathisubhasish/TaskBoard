@@ -39,6 +39,17 @@ const AddTask = async (req,res) => {
             });
         }
 
+        const boardIdExists = await Board.findOne({
+            where: {board_id: board_id , user_id: user_id}    
+        });
+
+        if(!boardIdExists)
+        {
+            return res.status(400).json({
+                error: "Board does not exists",
+            });
+        }
+        
         const taskExists = await Task.findOne({
             where: {task: task , board_id: board_id}    
         });
@@ -49,13 +60,14 @@ const AddTask = async (req,res) => {
                 error: "Task already acknowledged!",
             });
         }
-
+ 
         const newTask = await Task.create({
             task: task,
             board_id: board_id
         });
         res.status(201).json({
-            message: "Task added successfully"
+            message: "Task added successfully",
+            data:{task_id:newTask.task_id, board_id: newTask.board_id, task: newTask.task }
         });
 
     }catch(err){

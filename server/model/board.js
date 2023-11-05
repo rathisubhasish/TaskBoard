@@ -14,7 +14,7 @@ const Board = sq.define("board", {
     }
   });
   
-  Board.belongsTo(User, {foreignKey: 'user_id'});
+  Board.belongsTo(User, {foreignKey: 'user_id',allowNull: false, onDelete: 'CASCADE'});
   Board.sync().then(() => {
     console.log("Board Model synced");
   });

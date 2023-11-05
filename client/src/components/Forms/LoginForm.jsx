@@ -6,7 +6,6 @@ import login from "../../apis/login";
 import { UserContext } from '../../UserContext';
 
 
-
 const LoginForm = () => {
     const { user, setUser, setUserId } = useContext(UserContext);
     const navigate = useNavigate();
@@ -20,7 +19,7 @@ const LoginForm = () => {
         const res = await login({email, password});
         if (res.error){
             toast.error(res.error, {
-            autoClose: 4000,
+            autoClose: 2000,
             hideProgressBar: true,
             closeButton: false,
             pauseOnHover: true,
@@ -30,7 +29,7 @@ const LoginForm = () => {
         }
         else {
             toast.success(res.message, {
-            autoClose: 1000,
+            autoClose: 2000,
             hideProgressBar: true,
             closeButton: false,
             pauseOnHover: true,

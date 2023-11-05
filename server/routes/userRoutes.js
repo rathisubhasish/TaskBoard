@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 
-const { userRegisterValidator,userLoginValidator} = require('../middleware/UserMiddleware');
+const { userRegisterValidator, userLoginValidator } = require('../middleware/UserMiddleware');
 const Signup = require('../controller/Signup');
 const Login = require('../controller/Login');
 const { verifyToken } = require('../middleware/AuthenticationMiddleware');
@@ -19,8 +19,8 @@ const TaskBoardUpdate = require('../controller/TaskBoardUpdate');
 
 
 // APIs Route
-router.get('/', (_,res) => {res.send('Hey, Welcome to Task Board');});
-router.post('/signup',userRegisterValidator, Signup);
+router.get('/', (_, res) => { res.send('Hey, Welcome to Task Board'); });
+router.post('/signup', userRegisterValidator, Signup);
 router.post('/login', userLoginValidator, Login);
 router.get('/getUser', verifyToken, GetUser);
 router.post('/logout', verifyToken, Logout);

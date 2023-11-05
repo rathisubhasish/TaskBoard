@@ -48,7 +48,8 @@ const AddBoard = async (req,res) => {
             user_id: user_id
         });
         res.status(201).json({
-            message: "Board added successfully"
+            message: "Board added successfully",
+            data: {board_id: newBoard.board_id, board_title: newBoard.board_title}
         });
 
     }catch(err){

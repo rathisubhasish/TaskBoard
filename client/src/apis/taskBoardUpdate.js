@@ -1,6 +1,6 @@
 
-const taskBoardUpdate = async ({userId, boardId, myTaskId, newBoardId}) => {
-    const data = {user_id: userId, board_id: boardId, task_id: myTaskId, new_board_id: newBoardId};
+const taskBoardUpdate = async ({userId, boardId, myTaskId, newBoardId, taskName}) => {
+    const data = {user_id: userId, board_id: boardId, task_id: myTaskId, new_board_id: newBoardId, task: taskName};
     
     try{
         const res = await fetch(`${process.env.REACT_APP_API_URL}/taskBoardUpdate`, {

@@ -14,7 +14,7 @@ const Task = sq.define("task", {
     }
   });
 
-  Task.belongsTo(Board, {foreignKey: 'board_id'});
+  Task.belongsTo(Board, {foreignKey: 'board_id',allowNull: false, onDelete: 'CASCADE'});
   Task.sync().then(() => {
     console.log("Task Model synced");
   });

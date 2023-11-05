@@ -1,6 +1,5 @@
 const login = async ({email, password}) => {
     const data = {email, password};
-    console.log(data);
     try{
         const res = await fetch(`${process.env.REACT_APP_API_URL}/login`, {
             method:"POST",

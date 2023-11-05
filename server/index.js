@@ -2,7 +2,7 @@
 const express = require('express');
 require("dotenv").config();
 const cors = require('cors');
-const {json, urlencoded} = express;
+const { json, urlencoded } = express;
 const expressValidator = require("express-validator");
 const cookieParser = require("cookie-parser");
 //-----------------
@@ -17,11 +17,12 @@ app.use(json());
 app.use(urlencoded({ extended: false }));
 app.use(expressValidator());
 app.use(cookieParser());
+
 // Routes
 const UserRoutes = require('./routes/userRoutes');
-app.use('/',UserRoutes);
+app.use('/', UserRoutes);
 
 //Listener
-const server = app.listen(port , ()=> {
+const server = app.listen(port, () => {
     console.log(`Server is running on port - ${port}`);
 });
