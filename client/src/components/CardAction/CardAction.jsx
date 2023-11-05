@@ -48,7 +48,7 @@ const CardAction = ({ boardId, userId, setShowActionCard, showActionCard, allTas
   return (
     <>
       <div className='opaque-container'>
-        <div className='action-card'>
+        <div className='action-card animateit'>
           <div className='action-card-header'>
             Add Task
           </div>
@@ -68,7 +68,7 @@ const CardAction = ({ boardId, userId, setShowActionCard, showActionCard, allTas
                 ?
                 <>
                   <button
-                    className='btn'
+                    className='btn animateit'
                     id="card-action-btn"
                     onClick={handleTask}
                   >

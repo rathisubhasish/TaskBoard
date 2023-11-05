@@ -107,7 +107,7 @@ const Board = () => {
                     boardTitle.length > 0
                       ?
                       <>
-                        <button className='addbtn btn' onClick={addColumns}>+ Add</button>
+                        <button className='addbtn btn animateit' onClick={addColumns}>+ Add</button>
                       </>
                       :
                       ''

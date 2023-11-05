@@ -4,6 +4,7 @@
     flex-direction: column;
     flex-grow: 1;
     justify-content: flex-start;
+    background-color: #d2abd31f;
 }
 
 .board-layout {
@@ -29,6 +30,7 @@
     padding: 10px;
     width: 100%;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    background-color: white;
 }
 
 .list-area {
