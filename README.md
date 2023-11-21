@@ -1,22 +1,22 @@
 <h1 align="center">
-JOOGLE (Opportunistic Platform)
+Task Board Project (Kanban Board)
 </h1>
-<h6 align="center">A MERN Stack based web application.</h6>
+<h6 align="center">A PERN Stack based web application.</h6>
 <p align="center">
-MongoDB, ExpressJS, React, NodeJS
+PostgreSQL, ExpressJS, React, NodeJS
 </p>
 
-> MERN is a fullstack implementation in MongoDB, Expressjs, React/Redux, Nodejs.
-MERN stack is the idea of using Javascript/Node for fullstack web development.
+> PERN is a fullstack implementation in PostgreSQL, Expressjs, React, Nodejs.
+PERN stack is the idea of using Javascript/Node for fullstack web development.
 
 <br>
 
-> <b>Joogle</b> is a opportunity searching platform which help us to fill the communication-gap between the job seeker and the hiring companies, also the learning opportunities like Bootcamp,etc. It is a fully responsive MERN based web application.
+> <b>Task Board</b> is a platform which help us to create account based boards and the tasks with the drag and drop functionality , just like kanban board etc. It is a fully responsive PERN based web application.
 
 <br>
 
-> Joogle provides the explore to Jobs, Hiring Challenges, Bootcamps, etc. We can perform multiple operations like example - .
-> <ul><li>Login</li><li>Signup</li><li>Explore Opportunity (Requirement, Eligibility, Prizes, Fees etc)</li><li>Apply/Enroll the opportunity post</li><li>Create/Organise a opportunity via post</li><li>Edit the post created for others</li><li>Delete the post created</li><li>Withdraw the application from  competition</li><li>Review the people enrolled in your created oppotunity post</li><li>Visit your created post</li><li>Time based workflow</li><li>Easy tracking system, etc.</li></ul><b>and much more via using 12+ APIs</b><br><strong>Screenshots of project is attached at the last section.</strong>
+> A Kanban Board is an agile project management tool designed to help visualize work, limit work-in-progress, and maximize efficiency (or flow). It can help both agile and DevOps teams establish order in their daily work..
+> <ul><li>Login</li><li>Signup</li><li>Explore Boards</li><li>Add the new board</li><li>Add different tasks in particular board</li><li>Drag and Drop tasks into different boards smoothly</li><li>Delete the board created</li><li>Delete the task created by cheking checkbox</li><li>You can not drag and drop the same task name exists in another board</li><li>Cannot add new board with already existed board</li><li>Can add many board as you want</li><li>Can add many tasks as you needed</li></ul><b>and much more via using 10+ APIs</b><br><strong>Screenshots of project is attached at the last section.</strong>
 
 
 
@@ -29,7 +29,7 @@ $ yarn # or npm i
 # Usage (run fullstack app on your machine)
 
 ## Prerequisites
-- MongoDB
+- PostgreSQL 
 - [Node](https://nodejs.org/en/download/)
 - [npm](https://nodejs.org/en/download/package-manager/)
 
@@ -61,7 +61,7 @@ run the script at the first level:
 $ cd server
 $ echo "JWT_SECRET=YOUR_JWT_SECRET" >> src/.env
 $ echo "PORT=YOUR_PORT" >> src/.env
-$ echo "DB_URL=YOUR_MONGODB_URL" >> src/.env
+Edit config.js and enter your postgresql database details (username, password)
 ```
  
 ### Start
@@ -73,20 +73,20 @@ $ npm start // run it locally
 ```
 
 # Dependencies(tech-stacks)
-Client-side | Server-side
+Server-side | Client-side
 --- | ---
-dotenv: ^16.0.3|bcrypt: ^5.1.0
-moment: ^2.29.4 | cookie-parser: ^1.4.6
-react: ^18.2.0 | cors: ^2.8.5
-react-dom: ^18.2.0 | dayjs: ^1.11.7
-react-loading: ^2.0.3 | dotenv: ^16.0.3
-react-router-dom: ^6.4.2 | express: ^4.18.2
-react-toastify: ^9.0.8 | express-validator: ^5.3.1
-: | jsonwebtoken: ^9.0.0
-: | moment: ^2.29.4
-: | mongoose: ^6.9.0
-: | node-fetch: ^3.3.0
-: | nodemon: ^2.0.20
+bcrypt: ^5.1.1|dotenv: ^16.3.1
+body-parser: ^1.20.2|react: ^18.2.0
+cookie-parser: ^1.4.6|react-dom: ^18.2.0
+cors: ^2.8.5|react-loading: ^2.0.3
+dotenv: ^16.3.1|react-router-dom: ^6.18.0
+express: ^4.18.2|react-scripts: 5.0.1
+express-validator: ^5.3.1|react-toastify: ^9.1.3
+jsonwebtoken: ^9.0.2|web-vitals: ^2.1.4
+nodemon": ^3.0.1|:
+pg: ^8.11.3|:
+pg-hstore: ^2.3.4|:
+sequelize: ^6.33.0|:
 
 
 # Project Images (Mobile / Small Sceen View)
@@ -95,3 +95,62 @@ react-toastify: ^9.0.8 | express-validator: ^5.3.1
 
 <img src="./Project_Images/1.png" >
 <hr />
+<img src="./Project_Images/2.png" >
+<hr />
+<img src="./Project_Images/3.png" >
+<hr />
+<img src="./Project_Images/4.png" >
+<hr />
+<img src="./Project_Images/5.png" >
+<hr />
+<img src="./Project_Images/6.png" >
+<hr />
+<img src="./Project_Images/7.png" >
+<hr />
+<img src="./Project_Images/8.png" >
+<hr />
+<img src="./Project_Images/9.png" >
+<hr />
+<img src="./Project_Images/10.png" >
+<hr />
+<img src="./Project_Images/11.png" >
+<hr />
+<img src="./Project_Images/12.png" >
+<hr />
+<img src="./Project_Images/13.png" >
+<hr />
+<img src="./Project_Images/14.png" >
+<hr />
+<img src="./Project_Images/15.png" >
+<hr />
+<img src="./Project_Images/16.png" >
+<hr />
+<img src="./Project_Images/17.png" >
+<hr />
+<img src="./Project_Images/18.png" >
+<hr />
+<img src="./Project_Images/19.png" >
+<hr />
+<img src="./Project_Images/20.png" >
+<hr />
+<img src="./Project_Images/21.png" >
+<hr />
+<img src="./Project_Images/22.png" >
+<hr />
+<img src="./Project_Images/23.png" >
+<hr />
+<img src="./Project_Images/24.png" >
+<hr />
+<img src="./Project_Images/25.png" >
+<hr />
+<img src="./Project_Images/26.png" >
+<hr />
+<img src="./Project_Images/27.png" >
+<hr />
+<img src="./Project_Images/28.png" >
+<hr />
+<img src="./Project_Images/29.png" >
+<hr />
+<img src="./Project_Images/30.png" >
+<hr />
+
