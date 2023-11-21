@@ -37,6 +37,9 @@ $ yarn # or npm i
 - [Node](https://nodejs.org/en/download/)
 - [npm](https://nodejs.org/en/download/package-manager/)
 
+
+<img src="./Project_Images/modal.png" >
+<hr />
 <img src="./Project_Images/db.png" >
 <hr />
 
