@@ -19,6 +19,10 @@ PERN stack is the idea of using Javascript/Node for fullstack web development.
 > <ul><li>Login</li><li>Signup</li><li>Explore Boards</li><li>Add the new board</li><li>Add different tasks in particular board</li><li>Drag and Drop tasks into different boards smoothly</li><li>Delete the board created</li><li>Delete the task created by cheking checkbox</li><li>You can not drag and drop the same task name exists in another board</li><li>Cannot add new board with already existed board</li><li>Can add many board as you want</li><li>Can add many tasks as you needed</li></ul><b>and much more via using 10+ APIs</b><br><strong>Screenshots of project is attached at the last section.</strong>
 
 
+<img src="./Project_Images/api.png" >
+<hr />
+
+
 
 ## clone or download
 ```terminal
@@ -32,6 +36,9 @@ $ yarn # or npm i
 - PostgreSQL 
 - [Node](https://nodejs.org/en/download/)
 - [npm](https://nodejs.org/en/download/package-manager/)
+
+<img src="./Project_Images/db.png" >
+<hr />
 
 notice, you need client and server runs concurrently in different terminal session, in order to make them talk to each other
 
@@ -152,5 +159,15 @@ sequelize: ^6.33.0|:
 <img src="./Project_Images/29.png" >
 <hr />
 <img src="./Project_Images/30.png" >
+<hr />
+<img src="./Project_Images/31.png" >
+<hr />
+<img src="./Project_Images/32.png" >
+<hr />
+<img src="./Project_Images/33.png" >
+<hr />
+<img src="./Project_Images/34.png" >
+<hr />
+<img src="./Project_Images/35.png" >
 <hr />
 
