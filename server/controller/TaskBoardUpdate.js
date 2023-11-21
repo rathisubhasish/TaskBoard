@@ -68,7 +68,7 @@ const TaskBoardUpdate = async (req,res) => {
 
 
         const taskExists = await Task.findOne({
-            where: {task_id: task_id , board_id: board_id}    
+            where: {task_id: task_id , board_id: board_id, task: task}    
         });
 
         if(!taskExists)

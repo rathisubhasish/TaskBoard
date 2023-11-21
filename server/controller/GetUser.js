@@ -22,7 +22,3 @@ const GetUser = async (req,res) =>{
 };
 
 module.exports = GetUser;
-
-
-
-// https://www.youtube.com/watch?v=4AHot187Lj0
