@@ -99,7 +99,7 @@ pg-hstore: ^2.3.4|:
 sequelize: ^6.33.0|:
 
 
-# Project Images (Mobile / Small Sceen View)
+# Project Images
 
 <h3>More Images are uploaded in Project_Images folder.</h3>
 
